@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+   >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:fillViewport="false"
+        android:background="#a7f8ed"
+        android:scrollbarAlwaysDrawVerticalTrack="false">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+
+            // Австрия
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="@dimen/width_layout"
+                    android:layout_height="@dimen/height_layout"
+                    android:weightSum="100"
+                    android:layout_marginTop="30dp">
+
+                    <TextView
+                        android:layout_width="@dimen/width_layout"
+                        android:layout_height="0dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text=""
+                        android:id="@+id/textView11"
+                        android:layout_gravity="left|top"
+                        android:background="@color/colorRed"
+                        android:layout_weight="30"/>
+
+                    <TextView
+                        android:layout_width="@dimen/width_layout"
+                        android:layout_height="0dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text=""
+                        android:id="@+id/textView12"
+                        android:layout_gravity="left|top"
+                        android:background="@color/colorWhite"
+                        android:layout_weight="30"/>
+
+                    <TextView
+                        android:layout_width="@dimen/width_layout"
+                        android:layout_height="0dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text=""
+                        android:id="@+id/textView13"
+                        android:layout_gravity="left|top"
+                        android:background="@color/colorRed"
+                        android:layout_weight="30"/>
+
+
+
+        </LinearLayout>
+
+//Польша
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="@dimen/width_layout"
+                android:layout_height="@dimen/height_layout"
+                android:weightSum="100"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="@dimen/width_layout"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView21"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorWhite"
+                    android:layout_weight="50"/>
+
+                <TextView
+                    android:layout_width="@dimen/width_layout"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView22"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorRedPoland"
+                    android:layout_weight="50"/>
+
+            </LinearLayout>
+
+//Италия
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="@dimen/width_layout"
+                android:layout_height="@dimen/height_layout"
+
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height_layout"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView31"
+                    android:background="@color/colorGreen"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height_layout"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView32"
+                    android:background="@color/colorWhite"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height_layout"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView33"
+                    android:background="@color/colorRed"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+//Колумбия
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="@dimen/width_layout"
+                android:layout_height="@dimen/height_layout"
+                android:weightSum="100"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView41"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorYellowColumbia"
+                    android:layout_weight="50"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView42"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorBlueColumbia"
+                    android:layout_weight="25"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView43"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorRedColumbia"
+                    android:layout_weight="25"/>
+
+            </LinearLayout>
+
+//Мадагаскар
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="@dimen/width_layout"
+                android:layout_height="@dimen/height_layout"
+
+                android:layout_marginTop="30dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView51"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorWhite"
+                    android:layout_weight="2"
+
+                    />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="@dimen/width_layout"
+                    android:layout_height="@dimen/height_layout"
+                    android:layout_weight="1">
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView52"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorRedMadagascar"
+                    android:layout_weight="50"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView53"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorGreenMadagascar"
+                    android:layout_weight="50"/>
+
+            </LinearLayout>
+            </LinearLayout>
+
+//Тайланд
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="@dimen/width_layout"
+                android:layout_height="@dimen/height_layout"
+
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView61"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorRedTai"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView62"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorWhite"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView63"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorBlueTai"
+                    android:layout_weight="2"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView64"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorWhite"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView65"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorRedTai"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+//Дания
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="@dimen/width_layout"
+                android:layout_height="@dimen/height_layout"
+
+                android:layout_marginTop="30dp"
+                android:background="@color/colorWhite">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                  android:layout_weight="1"
+                   >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView71"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorRedDanmark"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView72"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorRedDanmark"
+                    android:layout_weight="2"
+                    />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView73"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorRedDanmark"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/textView74"
+                    android:layout_gravity="left|top"
+                    android:background="@color/colorRedDanmark"
+                    android:layout_weight="2"
+
+                    />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</FrameLayout>

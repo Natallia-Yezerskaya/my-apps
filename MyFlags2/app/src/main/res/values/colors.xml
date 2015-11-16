@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorRed">#d4222c</color>
+    <color name="colorWhite">#fcfefc</color>
+    <color name="colorGreen">#048e44</color>
+    <color name="colorYellow">#fff555</color>
+    <color name="colorBlue">#144afc</color>
+
+    <color name="colorRedPoland">#ec160c</color>
+    <color name="colorYellowColumbia">#fcd214</color>
+    <color name="colorBlueColumbia">#043a94</color>
+    <color name="colorRedColumbia">#cc1224</color>
+
+    <color name="colorGreenMadagascar">#047e3c</color>
+    <color name="colorRedMadagascar">#fc3e34</color>
+
+    <color name="colorBlueTai">#04029c</color>
+    <color name="colorRedTai">#cc1224</color>
+
+    <color name="colorRedDanmark">#d40e34</color>
+
+
+
+
+
+
+</resources>
