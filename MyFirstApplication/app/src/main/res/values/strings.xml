@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyFirstApplication</string>
+    <string name="action_settings">Settings</string>
+    <string name="textView_text">First Text</string>
+    <string name="textView2_text">Second Text</string>
+
+</resources>
