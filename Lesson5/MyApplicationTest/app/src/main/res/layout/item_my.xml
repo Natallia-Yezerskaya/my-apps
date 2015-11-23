@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#fffffb88"
+    android:layout_marginBottom="1dp" >
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Summa"
+        android:id="@+id/tv_summa"
+        android:layout_gravity="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/tv_date"
+        android:layout_toEndOf="@+id/tv_date" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:id="@+id/tv_date"
+        android:layout_gravity="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:id="@+id/tv_name"
+        android:layout_gravity="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20dp"
+        android:layout_below="@+id/tv_date"
+        android:layout_alignLeft="@+id/tv_summa"
+        android:layout_alignStart="@+id/tv_summa" />
+
+</RelativeLayout>
