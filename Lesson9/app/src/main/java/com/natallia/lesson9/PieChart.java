@@ -1,8 +1,7 @@
 package com.natallia.lesson9;
 
-import android.content.ClipData;
+
 import android.content.Context;
-import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -18,18 +17,13 @@ import java.util.*;
 class PieChart extends View {
 
     private List<Paint>  mPiePaint = new ArrayList<Paint>();
-
     private List<Float> mData = new ArrayList<Float>();
     private RectF mBounds;
+    public float animationPosition = 0f;
 
     public PieChart(Context context, AttributeSet attrs) {
         super(context, attrs);
-
-
-
         init();
-        //mBounds = new RectF(700,100,800,150);
-
         mData.add(30f);
         mData.add(30f);
         mData.add(30f);
@@ -47,7 +41,6 @@ class PieChart extends View {
 
     private void init() {
 
-
         Paint mPiePaint1 = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPiePaint1.setStyle(Paint.Style.FILL);
         mPiePaint1.setColor(Color.RED);
@@ -60,20 +53,16 @@ class PieChart extends View {
         mPiePaint3.setStyle(Paint.Style.FILL);
         mPiePaint3.setColor(Color.GREEN);
 
-
-
         mPiePaint.add(mPiePaint1);
         mPiePaint.add(mPiePaint2);
         mPiePaint.add(mPiePaint3);
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 20; i++) {// если больше трех частей, генерируем цвета
             Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
             p.setStyle(Paint.Style.FILL);
             p.setColor(Color.argb(255, (int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random()*255)));
             mPiePaint.add(p);
         }
-       // mPiePaint.setTextSize(mTextHeight);
-
 
     }
 
@@ -84,7 +73,6 @@ class PieChart extends View {
         // Account for padding
         float xpad = (float)(getPaddingLeft() + getPaddingRight());
         float ypad = (float)(getPaddingTop() + getPaddingBottom());
-
 
         float ww = (float)w - xpad;
         float hh = (float)h - ypad;
@@ -102,24 +90,34 @@ class PieChart extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        float xAngle = 0f;
+
+        float animationAngle = 360 * animationPosition;
+        float startAngle = 0f;
         float sum = 0f;
+        boolean finish = false;
         for (int i = 0; i <mData.size() ; i++) {
             sum += mData.get(i);
         }
-            // Draw the pie slices
-            for (int i = 0; i < mData.size(); i++) {
-                float it = mData.get(i);
 
+        for (int i = 0; i < mData.size(); i++) {
+            float it = mData.get(i);
+            float sweepAngle  = 360/sum*it;
+            float endAngle = startAngle+sweepAngle;
 
-                //mPiePaint.setShader;
-                canvas.drawArc(mBounds,
-                        xAngle,
-                        360/sum*it,
-                        true, mPiePaint.get(i));
-                xAngle += 360/sum*it;
+            if (endAngle >= animationAngle)
+            {
+                endAngle = animationAngle;
+                finish = true;
             }
+            mPiePaint.get(i).setAlpha((int)(255*animationPosition)); // устанавливаем прозрачность
 
+            canvas.drawArc(mBounds,
+                    startAngle,
+                    endAngle-startAngle,
+                    true,  mPiePaint.get(i));
+            startAngle += 360/sum*it;
+            if (finish) {break;}
+        }
         }
 
 }

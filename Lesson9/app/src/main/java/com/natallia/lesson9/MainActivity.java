@@ -1,10 +1,15 @@
 package com.natallia.lesson9;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-
+    private boolean isStarted = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +38,13 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UpdateChart(editText,pieChart1);
-                UpdateChart(editText2,pieChart2);
-                UpdateChart(editText3,pieChart3);
+
+                UpdateChart(editText, pieChart1);
+                UpdateChart(editText2, pieChart2);
+                UpdateChart(editText3, pieChart3);
+                StartThread(pieChart1);
+                StartThread(pieChart2);
+                StartThread(pieChart3);
             }
 
         });
@@ -53,8 +62,39 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             pieChart.setData(masFloat);
-
         }
 
+
+    private void StartThread(final PieChart pieChart){
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                float value = 0f;
+                while (true){
+
+                    try {
+                        Thread.sleep(10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    value += 0.002f;
+                    pieChart.animationPosition = value; // передаем новый угол
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            pieChart.invalidate(); // перерисовываем pieChart
+                        }
+                    });
+
+                    if (value > 1f) break; // останавливаем поток
+                }
+            }
+        } );
+        thread.start();
+    }
 
 }
