@@ -2,6 +2,7 @@ package com.test.lesson10_classwork.services;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
@@ -20,11 +21,14 @@ public class MyService extends Service {
     private boolean isStarted = true;
     private Handler mHandler;
 
+
+    private IBinder mBinder = new LocalBinder();
+
     @Override
     public void onCreate() {
         super.onCreate();
         Log.d(TAG,"onCreate");
-        StartThread();
+        //StartThread();
         mHandler = new Myhandler();
     }
 
@@ -48,11 +52,23 @@ public class MyService extends Service {
 
     }
 
+
+    public class LocalBinder  extends Binder {
+       public MyService getService() {
+            return MyService.this;
+        }
+    }
+
+
     @Override
     public IBinder onBind(Intent intent) {
          Log.d(TAG,"onBind");
-        return null;
+        return mBinder;
 
+    }
+
+    public void makeSome(){
+        Log.d(TAG,"makeSome");
     }
 
 
