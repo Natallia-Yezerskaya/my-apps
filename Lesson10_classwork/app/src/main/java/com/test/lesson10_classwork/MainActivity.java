@@ -9,62 +9,100 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.BoringLayout;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.squareup.picasso.Picasso;
+import com.test.lesson10_classwork.UI.ActivityListener;
+import com.test.lesson10_classwork.UI.MaterialMenuDrawable;
+import com.test.lesson10_classwork.fragments.FragmentDetails;
+import com.test.lesson10_classwork.fragments.ListFragment;
 import com.test.lesson10_classwork.services.MyIntentService;
 import com.test.lesson10_classwork.services.MyService;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity  implements ActivityListener{
 
 
 
-    private MyService mMyService;
+    private TextView mTitleView;
+    private MaterialMenuDrawable mMenu;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+      super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.activity_main);
+     setContentView(R.layout.activity_main);
 
-        startService(new Intent(this,MyIntentService.class));
-        startService(new Intent(this,MyIntentService.class));
+     initToolbar();
 
-        /*MyAsyncTask myAsyncTask = new MyAsyncTask();
+     FragmentTransaction tr = getSupportFragmentManager().beginTransaction();
 
-        if ( Build.VERSION.SDK_INT > 23) {// TODO проверка версий для 6 -го андроида всегда проверять permission
-           int result = checkCallingOrSelfPermission(android.Manifest.permission.READ_CONTACTS);
+        ListFragment fragment = ListFragment.getInstance("djkgfhsg",getIntent());
+        tr.replace(R.id.container,fragment,"First");
+        tr.commit();
 
-            if (result == PackageManager.PERMISSION_DENIED){
-                requestPermissions( new String[] {android.Manifest.permission.READ_CONTACTS},123);
-            }
-        }
-        else {
-            myAsyncTask.execute(); // Для страрых версий
-        }
+       // FrameLayout container2  = (FrameLayout) findViewById(R.id.container2);
+        //if (container2 !=null){
 
+         /*   FragmentTransaction tr2 = getSupportFragmentManager().beginTransaction();
 
-
-        if ( Build.VERSION.SDK_INT > 14) {// проверка версий
-            myAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR); // запуск таска
-        }
-        else {
-            myAsyncTask.execute(); // Для страрых версий
-        }
+            FragmentDetails fragment2 = new FragmentDetails();
+            tr2.replace(R.id.container,fragment2);
+            tr2.addToBackStack(null);
+            tr2.commit();
 */
+       // }
+
+
+    }
+
+
+
+
+    private void initToolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setContentInsetsAbsolute(0,0);
+        mTitleView = (TextView) findViewById(R.id.tv_title);
+        mMenu = new MaterialMenuDrawable(this, Color.WHITE,MaterialMenuDrawable.Stroke.REGULAR,300);
+
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW);
+            }
+        });
+        toolbar.setNavigationIcon(mMenu);
+
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+
     }
 
     @Override
@@ -75,6 +113,16 @@ public class MainActivity extends ActionBarActivity {
         if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
             // тут выполняется код с правами доступа
         }
+
+    }
+
+    @Override
+    public void setTitle(String title) {
+        mTitleView.setText(title);
+    }
+
+    @Override
+    public void changeFragment(Fragment fragment) {
 
     }
 
@@ -184,9 +232,9 @@ public class MainActivity extends ActionBarActivity {
             Log.d("11111111","onServiceConnected");
            // mMyService = (MyService)service;
 
-            MyService.LocalBinder binder = (MyService.LocalBinder) service;
-            mMyService = binder.getService();
-            mMyService.makeSome();
+          //  MyService.LocalBinder binder = (MyService.LocalBinder) service;
+          //  mMyService = binder.getService();
+           // mMyService.makeSome();
 
         }
 
