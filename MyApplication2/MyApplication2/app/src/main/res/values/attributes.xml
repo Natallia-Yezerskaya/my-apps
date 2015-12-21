@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<declare-styleable name="MyStyle">
+
+    <attr name="my_font" format="enum">
+        <enum name="Quicksand_Bold" value="0"/>
+        <enum name="Quicksand_Italic" value="1"/>
+    </attr>
+
+
+</declare-styleable>
+
+</resources>

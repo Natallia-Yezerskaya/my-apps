@@ -73,7 +73,7 @@ public class DBHelper extends SQLiteOpenHelper {
                         DoctorTable.COL_AGE,
                         DoctorTable.COL_ID);
                 mDatabase.execSQL(queryUpdate,new Object[] {age, id});
-                Log.i(TAG, "ROW " + id + " HAS age" + age);
+                Log.i(TAG, "ROW " + id + " " + name +" HAS age" + age);
             cursor.close();
         }
         else {

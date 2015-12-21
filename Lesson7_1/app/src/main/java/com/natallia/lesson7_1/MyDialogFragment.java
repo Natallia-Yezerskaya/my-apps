@@ -15,9 +15,7 @@ import java.util.ArrayList;
  * Created by Administrator on 26.11.15.
  */
 public class MyDialogFragment extends DialogFragment{
-    public static final int ID_TEXTVIEW_1 = 1;
-    public static final int ID_TEXTVIEW_2 = 2;
-    public static final int ID_TEXTVIEW_3 = 3;
+
     public static ArrayList mSelectedItems;
 
     public Activity activity;
@@ -33,11 +31,6 @@ public class MyDialogFragment extends DialogFragment{
 
     @Override
     public Dialog onCreateDialog(final Bundle savedInstanceState) {
-        // Use the Builder class for convenient dialog construction
-
-
-
-
 
         mSelectedItems = new ArrayList();
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
@@ -62,12 +55,7 @@ public class MyDialogFragment extends DialogFragment{
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                          mListener.onDialogPositiveClick(MyDialogFragment.this);
-
-
-
                         }
-
-
                 })
                 .setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
 
@@ -76,7 +64,7 @@ public class MyDialogFragment extends DialogFragment{
 
                     }
                 });
-        // Create the AlertDialog object and return it
+
         return builder.create();
     }
 

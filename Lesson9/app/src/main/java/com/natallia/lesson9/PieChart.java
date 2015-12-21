@@ -2,6 +2,7 @@ package com.natallia.lesson9;
 
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -20,10 +21,11 @@ class PieChart extends View {
     private List<Float> mData = new ArrayList<Float>();
     private RectF mBounds;
     public float animationPosition = 0f;
+    private int sizeBorder;
 
     public PieChart(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init();
+        init(context,attrs);
         mData.add(30f);
         mData.add(30f);
         mData.add(30f);
@@ -39,11 +41,30 @@ class PieChart extends View {
         invalidate();
     }
 
-    private void init() {
+    private void init(Context context, AttributeSet attrs) {
+
+
+        if(isInEditMode()) {
+            return;
+        }
+
+        TypedArray a = context.obtainStyledAttributes(attrs,
+                R.styleable.MyPieChart);
+
+        int customSize = a.getInt(R.styleable.MyPieChart_border, -1);
+        if(customSize != -1) {
+            sizeBorder = customSize;}
+        else
+        { sizeBorder = 20;}
+
+
+         a.recycle();
 
         Paint mPiePaint1 = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mPiePaint1.setStrokeWidth(20);
         mPiePaint1.setStyle(Paint.Style.FILL);
         mPiePaint1.setColor(Color.RED);
+
 
         Paint mPiePaint2 = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPiePaint2.setStyle(Paint.Style.FILL);

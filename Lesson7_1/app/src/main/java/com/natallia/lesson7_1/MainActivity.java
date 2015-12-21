@@ -23,10 +23,6 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView text1 = (TextView) findViewById(R.id.textView1);
-        final TextView text2 = (TextView) findViewById(R.id.textView2);
-        final TextView text3 = (TextView) findViewById(R.id.textView3);
-
     }
 
 
