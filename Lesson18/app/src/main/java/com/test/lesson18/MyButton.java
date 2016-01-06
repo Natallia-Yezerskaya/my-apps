@@ -32,11 +32,9 @@ public class MyButton extends Button {
             return;
         }
 
-        TypedArray a = context.obtainStyledAttributes(attributeSet,
-                R.styleable.MyStyle);
 
 
-        int customFont  !=
+
 
     }
 
